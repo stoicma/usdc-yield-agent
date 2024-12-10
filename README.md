@@ -1,4 +1,4 @@
-# USDC Yield Aggregator
+# USDC Yield Aggregator (Sepolia Testnet)
 
 An intelligent DeFi yield aggregator that:
 - Fetches yield rates from multiple protocols (Aave, Compound, Gearbox)
@@ -13,6 +13,7 @@ An intelligent DeFi yield aggregator that:
 - Break-even analysis for different deposit amounts
 - Risk categorization based on TVL
 - Automated execution via Brian AI
+- Currently configured for Sepolia testnet
 
 ## Setup
 1. Clone the repository
@@ -22,11 +23,13 @@ An intelligent DeFi yield aggregator that:
 
 ## Environment Variables
 Required in `.env`:
-- BRIAN_API_KEY
-- ALCHEMY_API_KEY
-- ETHERSCAN_API_KEY
-- WALLET_ADDRESS
-- AGENT_PRIVATE_KEY
+- BRIAN_API_KEY - Brian AI API key
+- OPENAI_API_KEY - OpenAI API key for AI operations
+- ETHERSCAN_API_KEY - Etherscan API for gas calculations
+- ALCHEMY_API_KEY - Alchemy API for Sepolia interactions
+- WALLET_ADDRESS - Your Sepolia testnet wallet address
+- AGENT_PRIVATE_KEY - Your Sepolia testnet wallet private key
+- SEPOLIA_RPC_URL - Sepolia testnet RPC URL (Alchemy)
 
 ## Testing
 Tests are located in `src/tests/`
@@ -35,4 +38,5 @@ Run tests with: `npm test`
 ## Security
 - No sensitive data is stored in the codebase
 - All API keys and private keys must be provided via environment variables
-- Public APIs only (DeFi Llama, Etherscan)
+- Uses DeFi Llama's public API and authenticated services (Etherscan, Alchemy)
+- Currently configured for Sepolia testnet only - do not use with mainnet keys
